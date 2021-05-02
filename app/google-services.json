@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "522069940305",
+    "project_id": "cultivo-fbf56",
+    "storage_bucket": "cultivo-fbf56.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522069940305:android:a6229df32dc0ea2b87c070",
+        "android_client_info": {
+          "package_name": "com.example.cultivo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522069940305-8p0smjgqg99mo3tq9e3760g51jptuto7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP2F_suNmQ1_7LRlHJIEa4jDfOgGf4dbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522069940305-8p0smjgqg99mo3tq9e3760g51jptuto7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
