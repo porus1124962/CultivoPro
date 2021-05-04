@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cultivo">
-        <activity android:name=".Dashboard"></activity>
+        <activity android:name=".userDashboard"></activity>
+        <activity android:name=".AdminDashboard" />
+        <activity android:name=".Seller.AdminDashboard" />
         <activity android:name=".SignIn" />
         <activity android:name=".MainActivity">
             <intent-filter>

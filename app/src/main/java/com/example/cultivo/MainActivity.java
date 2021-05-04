@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,21 +33,37 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     ProgressBar progressBar;
+    TextView goToSignIn;
+    RadioButton rbBtnSeller,rbBtnBuyer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        rbBtnSeller = findViewById(R.id.rbSeller);
+        rbBtnBuyer = findViewById(R.id.rbBuyer);
         etEmail = findViewById(R.id.EtEmail);
         etPass = findViewById(R.id.EtPass);
         etPhone = findViewById(R.id.EtPhone);
         etName = findViewById(R.id.etName);
         etWarehouse = findViewById(R.id.wareHouse);
         btnRegister = findViewById(R.id.BtnSignUp);
-
-
+        goToSignIn = findViewById(R.id.goToSignIn);
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         progressBar = findViewById(R.id.progressBar);
+
+
+
+        //redirect to signin
+        goToSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),SignIn.class));
+                finish();
+            }
+        });
+
+        //Start User registration
         if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(), SignIn.class));
             finish();
@@ -59,6 +77,11 @@ public class MainActivity extends AppCompatActivity {
                 String pass = etPass.getText().toString().trim();
                 String phone = etPhone.getText().toString().trim();
                 String address = etWarehouse.getText().toString().trim();
+                //checkbox validation
+                if(!(rbBtnSeller.isChecked() || rbBtnBuyer.isChecked())) {
+                    Toast.makeText(MainActivity.this, "select account type", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 if (TextUtils.isEmpty(name)){
                     etName.setError("Email is Required");
@@ -116,10 +139,22 @@ public class MainActivity extends AppCompatActivity {
                         userInfo.put("Address",address);
 
                         //specify if the user is admin
-                        userInfo.put("isUser","1");
+                        if(rbBtnSeller.isChecked()){
+                            userInfo.put("isSeller","1");
+                        }
+                        if(rbBtnBuyer.isChecked()){
+                            userInfo.put("isBuyer","1");
+                        }
                         df.set(userInfo);
-                        startActivity(new Intent(getApplicationContext(), SignIn.class));
-                        finish();
+
+                        if(rbBtnSeller.isChecked()){
+                            startActivity(new Intent(getApplicationContext(),AdminDashboard.class));
+                            finish();
+                        }
+                        if(rbBtnBuyer.isChecked()){
+                            startActivity(new Intent(getApplicationContext(),userDashboard.class));
+                            finish();
+                        }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
