@@ -5,28 +5,37 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-public class userDashboard extends AppCompatActivity {
-    Button btnLogOut,btnAccount;
+public class Bids extends AppCompatActivity {
+
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    FirebaseUser user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_dashboard);
-//        btnLogOut = findViewById(R.id.btnLogOut);
-//        btnAccount = findViewById(R.id.accountBtn);
+        setContentView(R.layout.activity_bids);
 
+
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        user = fAuth.getCurrentUser();
         //bottomNavigation code start
         //initialize and asign var
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         //set Dashboard selected
-        bottomNavigationView.setSelectedItemId(R.id.dashboard);
+        bottomNavigationView.setSelectedItemId(R.id.bids);
 
         //perform itemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -34,6 +43,26 @@ public class userDashboard extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.dashboard:
+                        DocumentReference df =fStore.collection("User").document(user.getUid());
+                        //extract data from the document
+                        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                            @Override
+                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                Log.d("TAG", "onSuccess: " + documentSnapshot.getData());
+
+                                //identify the user access level
+                                if(documentSnapshot.getString("isSeller") != null){
+                                    //user is seller
+
+                                    startActivity(new Intent(getApplicationContext(),AdminDashboard.class));
+                                    finish();
+                                }
+                                if (documentSnapshot.getString("isBuyer")!=null){
+                                    startActivity(new Intent(getApplicationContext(), userDashboard.class));
+                                    finish();
+                                }
+                            }
+                        });
                         return true;
 
                     case R.id.categories:
@@ -41,8 +70,6 @@ public class userDashboard extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.bids:
-                        startActivity(new Intent(getApplicationContext(),Bids.class));
-                        overridePendingTransition(0,0);
                         return true;
                     case R.id.schemes:
                         startActivity(new Intent(getApplicationContext(),Schemes.class));
@@ -57,23 +84,5 @@ public class userDashboard extends AppCompatActivity {
             }
         });
         //bottomNavigation code end
-
-
-//        btnAccount.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getApplicationContext(),Account.class));
-//                finish();
-//            }
-//        });
-//
-//        btnLogOut.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                FirebaseAuth.getInstance().signOut();
-//                startActivity(new Intent(getApplicationContext(),SignIn.class));
-//                finish();
-//            }
-//        });
     }
 }

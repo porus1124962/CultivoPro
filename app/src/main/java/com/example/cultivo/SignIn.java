@@ -70,6 +70,7 @@ public class SignIn extends AppCompatActivity {
                     public void onSuccess(AuthResult authResult) {
                         Toast.makeText(SignIn.this,"SignedIn successfully.", Toast.LENGTH_SHORT).show();
                         checkUserAccessLevel(authResult.getUser().getUid());
+
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

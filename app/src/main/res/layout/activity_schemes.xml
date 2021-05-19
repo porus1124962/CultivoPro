@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".Schemes">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:text="Schemes By Goverment" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="369dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="0dp"
+                android:text="Empowerment of Kissan through Financial and Digital Inclusion (E-Credit)"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="364dp"
+                android:layout_height="153dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:text="A scheme titled “Empowerment of Kissan through Financial and Digital Inclusion” (E-Credit Scheme) was launched in October 2016 for a period of five years upto 2020-21. Through this scheme, interest free loans are being provided to small farmers though two Commercial Banks / Participating Financial Institutions (PFIs) (ZTBL and -NBP) and three Micro Finance Institutions (MFIs) (Telenor Micro Finance Bank, NRSP and Akhuwat Islamic Microfinance). " />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Subsidy of Fertilizers and Seeds"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="364dp"
+                android:layout_height="184dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="Phosphate and potassic fertilizers subsidy has been  provided on DAP, NP, SSP, SOP, MOP and NPK fertilizers @ 500, 200, 200, 800, 500 and 300 per 50Kg bag. A voucher has been provided in each fertilizer bag, the registered farmers of Punjab can get subsidy by sending hidden voucher number along with CNIC to the short code 8070 and can collect subsidy from the designated Branchless Banking Operator franchise. The use of phosphatic and potash fertilizers was decreasing due to their high prices and the balanced use of fertilizers was not being observed. " />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="361dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Pilot Testing of Innovative Technologies to Improve Water Use Efficiency"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="362dp"
+                android:layout_height="191dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:text="The government's vision for the agriculture sector, alongwith other initiatives, encompasses water conservation and water productivity through enhancing water use efficiency by using soil moisture monitoring gadgets. The proposed project aims at evaluation of climate smart interventions and their demonstration for enhancing the water use efficiency at farm level vis-à-vis improving water productivity and crop yield. Enhancing water use efficiency will significantly contribute towards improving the water productivity and resultantly trigger the growth of the rural economy." />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="363dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Oilseed Crops Promotion"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="364dp"
+                android:layout_height="154dp"
+                android:layout_gravity="center"
+                android:text="The Oilseed Promotion Programme has been launched by the Agriculture Department for the year 2019-20 to 2023-24 with an allocated budget of 5490.00 Million PKR. Under the scheme, subsidy was provided on Canola, Sunflower and Sesame to the registered farmers throughout Punjab via E-vouchers pasted on Canola, Sunflower and Sesame bags." />
+        </LinearLayout>
+    </ScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
+        app:itemBackground="@color/purple_700"
+        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        app:menu="@menu/menu_navigation_common"
+        android:layout_alignParentBottom="true"
+
+        />
+</RelativeLayout>
