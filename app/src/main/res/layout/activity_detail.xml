@@ -22,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:padding="20dp"
-        android:text="Description"
-
+        android:text="Description : Wheat is a grass widely cultivated for its seed, a cereal grain which is a worldwide staple food. The many species of wheat together make up the genus Triticum; the most widely grown is common wheat (T. aestivum)."
+        android:textSize="25sp"
         />
 
 </LinearLayout>
