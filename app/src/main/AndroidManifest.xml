@@ -3,6 +3,7 @@
     package="com.example.cultivo">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -13,21 +14,22 @@
         android:theme="@style/Theme.Cultivo">
         <activity android:name=".uploadProduct"></activity>
         <activity android:name=".DetailActivity" />
-        <activity android:name=".Product" />
         <activity android:name=".Category" />
         <activity android:name=".Bids" />
         <activity android:name=".Account" />
         <activity android:name=".Schemes" />
         <activity android:name=".userDashboard" />
         <activity android:name=".AdminDashboard">
+
+        </activity>
+        <activity android:name=".SignIn" />
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignIn" />
-        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

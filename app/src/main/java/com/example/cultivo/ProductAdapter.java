@@ -31,20 +31,20 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i) {
-        productViewHolder.imageView.setImageResource(myProductData.get(i).getItemImage());
+       //productViewHolder.imageView.setImageResource(myProductData.get(i).getItemImage());
         productViewHolder.pTitle.setText(myProductData.get(i).getItemName());
         productViewHolder.pDescription.setText(myProductData.get(i).getItemDescription());
         productViewHolder.pPrice.setText(myProductData.get(i).getItemPrice());
 
-        productViewHolder.pCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(pContext,DetailActivity.class);
-                intent.putExtra("Image",myProductData.get(ProductViewHolder.getAdapterPosition()).getItemImage());
-                intent.putExtra("Description",myProductData.get(ProductViewHolder.getAdapterPosition()).getItemImage());
-                pContext.startActivity(intent);
-            }
-        });
+//        productViewHolder.pCardView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                Intent intent = new Intent(pContext,DetailActivity.class);
+////                intent.putExtra("Image",myProductData.get(ProductViewHolder.getAdapterPosition()).getItemImage());
+////                intent.putExtra("Description",myProductData.get(ProductViewHolder.getAdapterPosition()).getItemImage());
+////                pContext.startActivity(intent);
+//            }
+//        });
     }
 
     @Override

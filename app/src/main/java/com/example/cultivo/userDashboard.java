@@ -2,6 +2,8 @@ package com.example.cultivo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,12 +14,39 @@ import android.widget.Button;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class userDashboard extends AppCompatActivity {
     Button btnLogOut,btnAccount;
+    RecyclerView pRecyclerView;
+    List<ProductData> myProductList;
+    ProductData pProductData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
+
+
+
+//        pRecyclerView = (RecyclerView)findViewById(R.id.RecyclerViewCard);
+//        GridLayoutManager gridLayoutManager = new GridLayoutManager(userDashboard.this,1);
+//        pRecyclerView.setLayoutManager(gridLayoutManager);
+//        myProductList= new ArrayList<>();
+//        pProductData = new ProductData("Wheat","A","Wheat is a grass widely cultivated for its seed, a cereal grain which is a worldwide staple food.","2226","1-13-12","11-5-20","Uid",R.drawable.wheat);
+//        myProductList.add(pProductData);
+//        pProductData = new ProductData("Sugercan","A","Wheat is a grass widely cultivated for its seed, a cereal grain which is a worldwide staple food.","2226","1-13-12","11-5-20","Uid",R.drawable.sugarcan);
+//        myProductList.add(pProductData);
+//        pProductData = new ProductData("Rice","A","Wheat is a grass widely cultivated for its seed, a cereal grain which is a worldwide staple food.","2226","1-13-12","11-5-20","Uid",R.drawable.rice);
+//        myProductList.add(pProductData);
+
+
+        ProductAdapter productAdapter = new ProductAdapter(userDashboard.this,myProductList);
+        pRecyclerView.setAdapter(productAdapter);
+
+
+
+
 //        btnLogOut = findViewById(R.id.btnLogOut);
 //        btnAccount = findViewById(R.id.accountBtn);
 

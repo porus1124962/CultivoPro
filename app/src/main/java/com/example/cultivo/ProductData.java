@@ -5,12 +5,13 @@ public class ProductData {
     private String itemName;
     private String itemDescription;
     private String itemPrice;
+    private String itemQuality;
     private String itemStartDate;
     private String itemEndDate;
     private String itemBidWinner;
-    private int itemImage;
+    private String itemImage;
 
-    public ProductData(String itemName, String itemDescription, String itemPrice, String itemStartDate, String itemEndDate, String itemBidWinner, int itemImage) {
+    public ProductData(String itemName,String itemQuality, String itemDescription, String itemPrice, String itemStartDate, String itemEndDate, String itemBidWinner, String itemImage) {
         this.itemName = itemName;
         this.itemDescription = itemDescription;
         this.itemPrice = itemPrice;
@@ -31,6 +32,9 @@ public class ProductData {
     public String getItemPrice() {
         return itemPrice;
     }
+    public String getItemQuality() {
+        return itemQuality;
+    }
 
     public String getItemStartDate() {
         return itemStartDate;
@@ -44,7 +48,7 @@ public class ProductData {
         return itemBidWinner;
     }
 
-    public int getItemImage() {
+    public String getItemImage() {
         return itemImage;
     }
 }
