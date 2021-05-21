@@ -29,10 +29,10 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     EditText etEmail, etPass, etPhone,etName,etWarehouse;
-    Button btnRegister, btnGoogle , btnFacebook;
+    Button btnRegister;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
-    ProgressBar progressBar;
+
     TextView goToSignIn;
     RadioButton rbBtnSeller,rbBtnBuyer;
     @Override
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         goToSignIn = findViewById(R.id.goToSignIn);
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
-        progressBar = findViewById(R.id.progressBar);
+
 
 
 
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-                progressBar.setVisibility(View.VISIBLE);
+                //progressBar.setVisibility(View.VISIBLE);
 
                 // register the user in firebase
 

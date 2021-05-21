@@ -167,7 +167,6 @@ public class Account extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.account:
-
                         return true;
                 }
                 return false;

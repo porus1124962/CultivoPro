@@ -11,22 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cultivo">
-        <activity android:name=".Product"></activity>
+        <activity android:name=".uploadProduct"></activity>
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".Product" />
         <activity android:name=".Category" />
         <activity android:name=".Bids" />
         <activity android:name=".Account" />
         <activity android:name=".Schemes" />
-        <activity android:name=".userDashboard" >
-        </activity>
-        <activity android:name=".AdminDashboard" />
-        <activity android:name=".SignIn"></activity>
-        <activity android:name=".MainActivity" >
+        <activity android:name=".userDashboard" />
+        <activity android:name=".AdminDashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SignIn" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

@@ -72,12 +72,14 @@
 
                 <TextView
                     android:id="@+id/textView12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="cursive"
+                    android:layout_gravity="center"
                     android:text="Profile"
-                    android:textSize="24sp"
+                    android:textColor="#000000"
+                    android:textSize="30dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -192,7 +194,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bottom_navigation"
-        app:itemBackground="@color/purple_700"
+        app:itemBackground="@color/browser_actions_bg_grey"
         app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu_navigation_common"
