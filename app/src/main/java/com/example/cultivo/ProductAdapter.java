@@ -36,15 +36,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
         productViewHolder.pDescription.setText(myProductData.get(i).getItemDescription());
         productViewHolder.pPrice.setText(myProductData.get(i).getItemPrice());
 
-//        productViewHolder.pCardView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                Intent intent = new Intent(pContext,DetailActivity.class);
-////                intent.putExtra("Image",myProductData.get(ProductViewHolder.getAdapterPosition()).getItemImage());
-////                intent.putExtra("Description",myProductData.get(ProductViewHolder.getAdapterPosition()).getItemImage());
-////                pContext.startActivity(intent);
-//            }
-//        });
+//
+
     }
 
     @Override
